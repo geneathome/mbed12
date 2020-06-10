@@ -62,7 +62,7 @@ int main() {
 
     //TODO: revise this value according to your result
 
-    servo_control(37.222);
+    servo_control(26.587);
 
 
     steps = 0;
@@ -72,13 +72,31 @@ int main() {
     t.start();
 
 
-    wait(8);
+    wait(5);
 
 
     float time = t.read();
 
 
     pc.printf("%1.3f\r\n", (float)steps*6.5*3.14/32/time);
+
+    servo_control(-42.539);
+
+
+    t.reset();
+
+    t.start();
+
+
+    wait(5);
+
+    time = t.read();
+    
+
+    pc.printf("%1.3f\r\n", (float)steps*6.5*3.14/32/time);
+
+
+
 
     }
 
